@@ -75,6 +75,10 @@ pygmentsStyle = "native"
 
     # Enable pingback and webmention via webmention.io
     # webmention = "hugocisneros.com"
+    
+    # add a link to your pgp key
+    #[params.gpg]
+    #    path = "static/key.gpg"
 
 
 # Sitemap location (default is /sitemap.xml)
