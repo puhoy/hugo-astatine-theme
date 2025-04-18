@@ -38,6 +38,9 @@
 
     {{ partial "taxonomy.html" . }}
     {{ partial "references.html" . }}
+    {{ partial "fedi_comments.html" . }}
+
+
     {{ if .Params.Lastmod }}
     <div class="text-neutral-500 mb-4">
         Last modified <span itemprop="dateModified"

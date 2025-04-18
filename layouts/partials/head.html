@@ -69,8 +69,10 @@
 <link rel="pingback" href="https://webmention.io/{{ .Site.Params.Webmention }}/xmlrpc">
 {{ end }}
 <!-- Style configuration -->
+{{ $comments := resources.Get "css/comments.scss" | toCSS | resources.Minify }}
 {{ $style := resources.Get "css/style.css" | resources.Minify }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">
+<link rel="stylesheet" href="{{ $comments.Permalink }}">
 <!-- Icon configuration -->
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -81,4 +83,6 @@
 <meta name="theme-color" content="#ffffff">
 <!-- Common JS -->
 {{ $commonJs := resources.Get "js/common.js" | resources.Minify }}
+{{ $purifyJs := resources.Get "js/purify.min.js" | resources.Minify }}
 <script>{{ $commonJs.Content | safeJS }}</script>
+<script>{{ $purifyJs.Content | safeJS }}</script>
